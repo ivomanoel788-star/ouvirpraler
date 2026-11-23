@@ -1,0 +1,495 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta property="og:title" content="Ouvir pra Ler — plano de leitura em casa">
+<meta property="og:description" content="10 minutos por dia para seu filho sair das letras soltas e começar a ler palavras.">
+<meta property="og:image" content="img/capa-plano.webp">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>📖</text></svg>">
+<!-- Meta Pixel: cole aqui o código do seu Pixel quando criar -->
+<title>Ouvir pra Ler</title>
+<meta name="description" content="Plano de leitura em casa para crianças de 4 a 7 anos: 40 lições de 10 minutos com roteiro para a mãe e até 520 atividades para imprimir.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&family=Nunito:wght@400;600;700;800&display=swap">
+<style>
+/* Layout: página longa de celular, faixas coloridas por fase (Ouvir→Ligar→Juntar→Ler), papel pautado de caderno como fundo das "cenas". */
+:root{
+  --paper:#fffcf7; --paper-2:#fff4e6; --ink:#262840; --ink-2:#55597a; --line:#ece4d6;
+  --ouvir:#ff7a2f; --ouvir-l:#ffe8d6; --ligar:#2f7bff; --ligar-l:#e3eeff;
+  --juntar:#16a866; --juntar-l:#dff6ea; --ler:#7c4dff; --ler-l:#ece5ff;
+  --mark:#ffd84d; --cta:#16a866; --cta-d:#0f8a52; --white:#ffffff;
+  --display:"Fredoka","Baloo 2","Trebuchet MS",system-ui,sans-serif;
+  --body:"Nunito","Segoe UI",system-ui,-apple-system,sans-serif;
+  --r:18px; --shadow:0 10px 30px -12px rgba(38,40,64,.25);
+  color-scheme:light;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{background:var(--paper);color:var(--ink);font-family:var(--body);font-size:17px;line-height:1.6;margin:0}
+img{max-width:100%;height:auto;display:block}
+h1,h2,h3{font-family:var(--display);line-height:1.12;margin:0;text-wrap:balance;letter-spacing:-.01em}
+h2{font-size:clamp(28px,6vw,42px)}
+h3{font-size:22px}
+p{margin:0}
+.wrap{max-width:1080px;margin:0 auto;padding-left:max(18px,env(safe-area-inset-left,0px));padding-right:max(18px,env(safe-area-inset-right,0px))}
+.band{padding-block:clamp(56px,9vw,96px)}
+.eyebrow{font-family:var(--display);font-weight:600;font-size:14px;letter-spacing:.08em;text-transform:uppercase}
+.mark{background:linear-gradient(transparent 58%,var(--mark) 58%,var(--mark) 92%,transparent 92%);padding:0 .08em}
+.center{text-align:center}
+.lead{font-size:clamp(17px,2.4vw,20px);color:var(--ink-2);max-width:60ch}
+.center .lead{margin-inline:auto}
+
+/* botão */
+.btn{display:inline-flex;flex-direction:column;align-items:center;justify-content:center;gap:2px;background:var(--cta);color:var(--white);font-family:var(--display);font-weight:700;font-size:clamp(18px,2.6vw,21px);
+  text-decoration:none;padding:18px 30px;border-radius:999px;box-shadow:0 6px 0 var(--cta-d),0 14px 28px -10px rgba(22,168,102,.6);transition:transform .15s,box-shadow .15s;text-align:center;line-height:1.2}
+.btn:hover{transform:translateY(-2px)}
+.btn:active{transform:translateY(4px);box-shadow:0 2px 0 var(--cta-d)}
+.btn:focus-visible,.faq summary:focus-visible,.shot:focus-visible{outline:3px solid var(--ligar);outline-offset:3px}
+.btn small{display:block;font-family:var(--body);font-weight:700;font-size:14px;opacity:.9}
+.btn.block{width:100%}
+.trust{display:flex;flex-wrap:wrap;gap:8px 16px;font-size:14px;color:var(--ink-2);font-weight:600;margin-top:14px}
+.trust span{display:inline-flex;align-items:center;gap:6px}
+
+/* barra topo */
+.topbar{background:var(--ink);color:var(--white);font-weight:700;font-size:14px;text-align:center;padding-block:9px;padding-left:max(12px,env(safe-area-inset-left,0px));padding-right:max(12px,env(safe-area-inset-right,0px))}
+.topbar b{color:var(--mark)}
+
+/* HERO */
+.hero{background:radial-gradient(1200px 500px at 85% -10%,var(--ler-l),transparent 60%),radial-gradient(900px 500px at -10% 20%,var(--ouvir-l),transparent 60%),var(--paper);padding-block:36px 64px;overflow:hidden}
+.hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:40px;align-items:center}
+.hero .eyebrow{display:inline-block;background:var(--white);color:var(--ouvir);border:2px solid var(--ouvir-l);padding:7px 14px;border-radius:999px}
+.hero h1{font-size:clamp(34px,6.6vw,60px);margin:18px 0 18px}
+.hero .lead{margin-bottom:22px}
+.eq{display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin-bottom:24px;font-family:var(--display);font-weight:700}
+.tile{display:inline-grid;place-items:center;min-width:56px;height:56px;padding:0 12px;border-radius:14px;font-size:26px;background:var(--white);border:3px solid var(--juntar);color:var(--ink);box-shadow:0 4px 0 var(--juntar-l)}
+.tile.o{border-color:var(--ouvir)}.tile.b{border-color:var(--ligar)}.tile.res{background:var(--juntar);color:var(--white);border-color:var(--juntar)}
+.op{font-size:24px;color:var(--ink-2)}
+.mock{position:relative;height:clamp(400px,44vw,500px)}
+.mock img{position:absolute;width:54%;border-radius:10px;box-shadow:0 18px 40px -16px rgba(38,40,64,.45);border:1px solid var(--line);background:var(--white)}
+.mock .m1{left:2%;top:12%;transform:rotate(-7deg);z-index:1}
+.mock .m2{left:46%;top:4%;transform:rotate(5deg);z-index:2}
+.mock .m3{left:24%;top:18%;transform:rotate(-1deg);z-index:3}
+.sticker{position:absolute;z-index:5;font-family:var(--display);font-weight:700;background:var(--white);border-radius:16px;padding:10px 14px;box-shadow:var(--shadow);line-height:1.1;text-align:center}
+.sticker b{display:block;font-size:26px}
+.sticker.s1{right:0;top:8%;color:var(--ler);transform:rotate(6deg)}
+.sticker.s2{left:0;bottom:6%;color:var(--ouvir);transform:rotate(-5deg)}
+@media (max-width:820px){.hero-grid{grid-template-columns:1fr}.mock{order:-1;height:clamp(280px,76vw,360px);margin-top:4px}.hero .eyebrow{font-size:12px}}
+
+/* faixa de números */
+.facts{background:var(--ink);color:var(--white)}
+.facts .wrap{display:grid;grid-template-columns:repeat(5,1fr);gap:14px;padding-block:22px}
+.fact{text-align:center}
+.fact b{display:block;font-family:var(--display);font-size:28px;color:var(--mark);font-variant-numeric:tabular-nums}
+.fact span{font-size:14px;font-weight:600;opacity:.85}
+@media (max-width:720px){.facts .wrap{grid-template-columns:repeat(2,1fr)}.fact:last-child{grid-column:1/-1}}
+
+/* dores */
+.pains{display:grid;grid-template-columns:repeat(2,1fr);gap:18px;margin-top:34px}
+.pain{position:relative;background:var(--white);border-radius:var(--r);padding:22px 22px 22px 70px;min-width:0;
+  background-image:repeating-linear-gradient(transparent 0 31px,var(--ligar-l) 31px 32px);border:1px solid var(--line)}
+.pain:before{content:"";position:absolute;left:48px;top:0;bottom:0;border-left:2px solid #ffc9c9}
+.pain .ico{position:absolute;left:12px;top:18px;font-size:26px}
+.pain b{font-family:var(--display);font-size:20px;display:block;margin-bottom:2px}
+.breathe{margin-top:30px;background:var(--juntar-l);border-radius:var(--r);padding:22px 24px;font-size:19px;font-weight:700;display:flex;gap:14px;align-items:center}
+.breathe span{font-size:32px}
+@media (max-width:700px){.pains{grid-template-columns:1fr}}
+
+/* virada */
+.turn{background:var(--paper-2)}
+.turn-grid{display:grid;grid-template-columns:1fr 1fr;gap:44px;align-items:center}
+.turn p+p{margin-top:14px}
+.path{display:grid;gap:14px}
+.step{display:grid;grid-template-columns:64px 1fr;gap:14px;align-items:center;background:var(--white);border-radius:var(--r);padding:14px 16px;border:2px solid var(--line);position:relative}
+.step .n{width:64px;height:64px;border-radius:16px;display:grid;place-items:center;font-size:30px}
+.step b{font-family:var(--display);font-size:21px;display:block}
+.step span{font-size:15px;color:var(--ink-2)}
+.step:not(:last-child):after{content:"";position:absolute;left:47px;bottom:-16px;height:16px;border-left:3px dashed var(--line)}
+.s-ouvir .n{background:var(--ouvir-l)} .s-ouvir b{color:var(--ouvir)}
+.s-ligar .n{background:var(--ligar-l)} .s-ligar b{color:var(--ligar)}
+.s-juntar .n{background:var(--juntar-l)} .s-juntar b{color:var(--juntar)}
+.s-ler .n{background:var(--ler-l)} .s-ler b{color:var(--ler)}
+@media (max-width:820px){.turn-grid{grid-template-columns:1fr}}
+
+/* rotina */
+.routine{margin-top:36px;background:var(--white);border-radius:24px;padding:26px;box-shadow:var(--shadow)}
+.bar{display:flex;border-radius:14px;overflow:hidden;margin:18px 0 10px;height:64px}
+.bar div{display:grid;place-items:center;color:var(--white);font-family:var(--display);font-weight:700;font-size:15px;text-align:center;line-height:1.15;padding:0 4px}
+.bar small{display:block;font-family:var(--body);font-size:12px;opacity:.9}
+.bar .a{flex:2;background:var(--ouvir)}.bar .b{flex:3;background:var(--ligar)}.bar .c{flex:4;background:var(--juntar)}.bar .d{flex:1.4;background:var(--ler)}
+.ticks{display:flex;justify-content:space-between;font-size:13px;color:var(--ink-2);font-weight:700;font-variant-numeric:tabular-nums}
+.quote{margin-top:22px;border-left:5px solid var(--mark);padding:6px 0 6px 16px;font-size:18px;font-weight:700}
+
+/* galeria */
+.gallery{display:grid;grid-auto-flow:column;grid-auto-columns:minmax(220px,260px);gap:18px;overflow-x:auto;scroll-snap-type:x mandatory;padding:8px 2px 18px;margin-top:30px;-webkit-overflow-scrolling:touch}
+.shot{scroll-snap-align:start;background:none;border:0;padding:0;cursor:zoom-in;text-align:left;font:inherit;color:inherit}
+.shot img{border-radius:12px;border:1px solid var(--line);box-shadow:0 10px 24px -14px rgba(38,40,64,.5);background:var(--white);aspect-ratio:595/842;object-fit:cover;width:100%}
+.shot span{display:block;margin-top:10px;font-weight:700;font-size:15px}
+.hint{font-size:14px;color:var(--ink-2);font-weight:600;margin-top:4px}
+.lightbox{position:fixed;inset:0;background:rgba(20,22,40,.82);display:grid;place-items:center;z-index:50;padding:max(16px,env(safe-area-inset-top,0px)) max(16px,env(safe-area-inset-right,0px)) max(16px,env(safe-area-inset-bottom,0px)) max(16px,env(safe-area-inset-left,0px))}
+.lightbox img{max-height:88vh;width:auto;border-radius:10px;background:var(--white)}
+.lightbox button{position:absolute;top:calc(14px + env(safe-area-inset-top,0px));right:calc(14px + env(safe-area-inset-right,0px));background:var(--white);color:var(--ink);border:0;border-radius:999px;width:44px;height:44px;font-size:22px;font-weight:800;cursor:pointer}
+
+/* entregáveis */
+.items{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:34px}
+.item{background:var(--white);border:1px solid var(--line);border-radius:var(--r);padding:22px;min-width:0}
+.item .ico{font-size:34px}
+.item h3{margin:10px 0 6px;font-size:20px}
+.item p{font-size:15.5px;color:var(--ink-2)}
+.item .tag{display:inline-block;margin-top:10px;font-size:12.5px;font-weight:800;color:var(--ler);background:var(--ler-l);border-radius:999px;padding:3px 10px}
+@media (max-width:860px){.items{grid-template-columns:1fr 1fr}}
+@media (max-width:560px){.items{grid-template-columns:1fr}}
+
+/* para quem */
+.who{display:grid;grid-template-columns:1.3fr 1fr;gap:18px;margin-top:30px}
+.who>div{border-radius:var(--r);padding:24px;min-width:0}
+.yes{background:var(--juntar-l)} .no{background:var(--white);border:2px dashed var(--line)}
+.who h3{margin-bottom:12px}
+.who ul{margin:0;padding:0;list-style:none;display:grid;gap:10px}
+.who li{padding-left:30px;position:relative}
+.who li:before{position:absolute;left:0;top:0;font-weight:800}
+.yes li:before{content:"✔";color:var(--juntar)} .no li:before{content:"✕";color:#d0485b}
+@media (max-width:760px){.who{grid-template-columns:1fr}}
+
+/* oferta */
+.offer{background:linear-gradient(180deg,var(--paper) 0%,var(--ler-l) 100%)}
+.plans{display:grid;grid-template-columns:1fr 1.12fr;gap:22px;align-items:start;margin-top:34px}
+.plan{background:var(--white);border-radius:24px;padding:26px;border:2px solid var(--line);position:relative;min-width:0}
+.plan.best{border:3px solid var(--juntar);box-shadow:0 24px 50px -24px rgba(22,168,102,.55)}
+.ribbon{position:absolute;top:-16px;left:50%;transform:translateX(-50%);background:var(--juntar);color:var(--white);font-family:var(--display);font-weight:700;font-size:14px;padding:6px 16px;border-radius:999px;white-space:nowrap}
+.plan h3{font-size:24px}
+.plan .pimg{display:flex;justify-content:center;gap:0;margin:16px 0 8px;height:150px}
+.plan .pimg img{height:150px;width:auto;border-radius:6px;box-shadow:0 10px 20px -12px rgba(38,40,64,.5);border:1px solid var(--line)}
+.plan .pimg img+img{margin-left:-34px;transform:rotate(6deg)}
+.plan ul{list-style:none;padding:0;margin:14px 0 18px;display:grid;gap:9px;font-size:15.5px}
+.plan li{padding-left:28px;position:relative}
+.plan li:before{content:"✔";position:absolute;left:0;color:var(--juntar);font-weight:800}
+.plan li.off{color:#a7a3b5;text-decoration:line-through}
+.plan li.off:before{content:"✕";color:#c9c3d6}
+.count{font-family:var(--display);font-weight:600;font-size:16px;color:var(--ink-2)}
+.count b{font-size:22px;color:var(--ink)}
+.price{display:flex;align-items:flex-end;gap:6px;margin:6px 0 4px;font-family:var(--display)}
+.price .cur{font-size:22px;font-weight:600;padding-bottom:10px}
+.price .val{font-size:58px;font-weight:700;line-height:1;font-variant-numeric:tabular-nums}
+.price .once{font-size:14px;color:var(--ink-2);font-family:var(--body);font-weight:700;padding-bottom:12px}
+.plan .btn.alt{background:var(--white);color:var(--ink);border:2px solid var(--ink);box-shadow:0 5px 0 var(--ink)}
+.compare{margin:20px auto 0;max-width:640px;text-align:center;font-weight:800;font-size:18px;background:var(--mark);border-radius:14px;padding:12px 16px}
+@media (max-width:820px){.plans{grid-template-columns:1fr}.plan.best{order:-1}}
+
+/* garantia */
+.guarantee{display:grid;grid-template-columns:150px 1fr;gap:26px;align-items:center;background:var(--white);border-radius:24px;padding:28px;border:2px solid var(--line);max-width:860px;margin:0 auto}
+.seal{width:150px;height:150px;border-radius:50%;background:var(--juntar);color:var(--white);display:grid;place-items:center;text-align:center;font-family:var(--display);font-weight:700;line-height:1;box-shadow:0 0 0 8px var(--juntar-l)}
+.seal b{display:block;font-size:56px}
+@media (max-width:620px){.guarantee{grid-template-columns:1fr;text-align:center}.seal{margin:0 auto}}
+
+/* faq */
+.faq{max-width:780px;margin:30px auto 0;display:grid;gap:12px}
+.faq details{background:var(--white);border:1px solid var(--line);border-radius:16px;padding:0 20px}
+.faq summary{cursor:pointer;font-family:var(--display);font-weight:600;font-size:19px;padding:18px 28px 18px 0;list-style:none;position:relative}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary:after{content:"+";position:absolute;right:0;top:14px;font-size:26px;color:var(--ouvir)}
+.faq details[open] summary:after{content:"–"}
+.faq details p{padding:0 0 18px;color:var(--ink-2)}
+
+/* final */
+.final{background:var(--ink);color:var(--white)}
+.final h2{color:var(--white)}
+.final .lead{color:#c9cbe0}
+.final .sum{display:flex;flex-wrap:wrap;justify-content:center;gap:10px;margin:22px 0 28px}
+.final .sum span{background:rgba(255,255,255,.1);border-radius:999px;padding:7px 14px;font-weight:700;font-size:15px}
+footer{background:var(--ink);color:#9ea1bd;font-size:13px;border-top:1px solid rgba(255,255,255,.08)}
+footer .wrap{padding-block:26px;display:grid;gap:8px;text-align:center}
+footer a{color:#c9cbe0}
+
+/* barra fixa celular */
+.sticky{position:fixed;left:0;right:0;bottom:0;z-index:40;background:var(--white);box-shadow:0 -8px 24px -12px rgba(38,40,64,.35);padding:10px max(14px,env(safe-area-inset-right,0px)) calc(10px + env(safe-area-inset-bottom,0px)) max(14px,env(safe-area-inset-left,0px));display:none;align-items:center;gap:12px;transform:translateY(110%);transition:transform .25s}
+.sticky.on{transform:none}
+.sticky .t{font-weight:800;font-size:14px;line-height:1.2;min-width:0}
+.sticky .t b{display:block;font-family:var(--display);font-size:18px}
+.sticky .btn{padding:13px 18px;font-size:16px;margin-left:auto;white-space:nowrap}
+@media (max-width:820px){.sticky{display:flex}body{padding-bottom:84px}}
+
+.cta-row{margin-top:34px;display:flex;flex-direction:column;align-items:center;gap:6px}
+@media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important;scroll-behavior:auto!important}}
+@keyframes pop{0%{transform:scale(.6);opacity:.4}60%{transform:scale(1.08);opacity:1}100%{transform:scale(1)}}
+.tile.res{animation:pop .7s .6s both}
+</style>
+</head>
+<body>
+
+
+<div class="topbar">📚 Prepare seu filho para o <b>1º ano</b> · Acesso imediato no e-mail · Garantia de 7 dias</div>
+
+<!-- HERO -->
+<header class="hero">
+  <div class="wrap hero-grid">
+    <div>
+      <span class="eyebrow">Para mães de crianças de 4 a 7 anos</span>
+      <h1>Ele conhece as letras, mas ainda não lê? <span class="mark">O passo que falta</span> começa pelo ouvido.</h1>
+      <p class="lead">O <b>Ouvir pra Ler</b> é um plano de 40 lições de 10 minutos para você aplicar em casa, com roteiro pronto do que falar e fazer. No plano Completo, são mais de 500 atividades para imprimir. Você não precisa ser professora.</p>
+      <div class="eq" aria-label="BO mais LA é igual a BOLA">
+        <span class="tile o">BO</span><span class="op">+</span><span class="tile b">LA</span><span class="op">=</span><span class="tile res">BOLA ⚽</span>
+      </div>
+      <a class="btn" href="#oferta">QUERO COMEÇAR HOJE<small>a partir de R$ 19,90</small></a>
+      <div class="trust"><span>🔒 Pagamento único</span><span>💳 Pix ou cartão</span><span>🛡️ 7 dias de garantia</span></div>
+    </div>
+    <div class="mock" aria-hidden="true">
+      <img class="m1" src="img/licao21-trem.webp" alt="" width="803" height="1137">
+      <img class="m2" src="img/livrinho-pato.webp" alt="" width="803" height="1137">
+      <img class="m3" src="img/capa-plano.webp" alt="" width="803" height="1137">
+      <div class="sticker s1"><b>40</b>lições</div>
+      <div class="sticker s2"><b>+500</b>atividades</div>
+    </div>
+  </div>
+</header>
+
+<section class="facts" aria-label="Resumo">
+  <div class="wrap">
+    <div class="fact"><b>10 min</b><span>por dia</span></div>
+    <div class="fact"><b>40</b><span>lições com roteiro</span></div>
+    <div class="fact"><b>8</b><span>semanas</span></div>
+    <div class="fact"><b>520</b><span>atividades no Completo</span></div>
+    <div class="fact"><b>PDF</b><span>imprima quantas vezes quiser</span></div>
+  </div>
+</section>
+
+<!-- DORES -->
+<section class="band">
+  <div class="wrap">
+    <div class="center"><span class="eyebrow" style="color:var(--ouvir)">Acontece na sua casa?</span><h2 style="margin-top:8px">Você se reconhece em alguma dessas cenas?</h2></div>
+    <div class="pains">
+      <div class="pain"><span class="ico">🔤</span><b>Ele sabe o alfabeto de cor…</b>mas trava na hora de juntar o M com o A.</div>
+      <div class="pain"><span class="ico">😢</span><b>A lição de casa vira choro</b>e você termina o dia se sentindo culpada.</div>
+      <div class="pain"><span class="ico">🗂️</span><b>Você já imprimiu um monte de atividades</b>e ainda não sabe por onde começar.</div>
+      <div class="pain"><span class="ico">🎒</span><b>O 1º ano está chegando</b>e bate o medo de ele ficar para trás.</div>
+    </div>
+    <div class="breathe"><span>💛</span><p>Respira. Isso é muito comum e não quer dizer que tem algo errado com seu filho. Quase sempre está faltando um passo.</p></div>
+  </div>
+</section>
+
+<!-- VIRADA -->
+<section class="band turn">
+  <div class="wrap turn-grid">
+    <div>
+      <span class="eyebrow" style="color:var(--ligar)">O passo que quase todo mundo pula</span>
+      <h2 style="margin:8px 0 18px">Antes de ler com os olhos, a criança precisa <span class="mark">ouvir</span> os sons.</h2>
+      <p>Para ler, a criança precisa perceber que as palavras são feitas de pedacinhos de som: BO-LA, MA-LA, PA-TO. Os especialistas chamam isso de <b>consciência fonológica</b>.</p>
+      <p>A maioria dos materiais pula essa parte e vai direto para as letras e sílabas escritas. A criança decora o alfabeto, mas não entende como os sons se juntam. E aí ela trava.</p>
+      <p>O Ouvir pra Ler começa pelo ouvido e segue a ordem natural da leitura.</p>
+    </div>
+    <div class="path">
+      <div class="step s-ouvir"><div class="n">👂</div><div><b>1 · Ouvir</b><span>Rimas, palmas nas sílabas e o som do começo. Sem lápis.</span></div></div>
+      <div class="step s-ligar"><div class="n">🔤</div><div><b>2 · Ligar</b><span>Cada som ganha sua letra: vogais e M, P, B, T, L, D, N.</span></div></div>
+      <div class="step s-juntar"><div class="n">🧩</div><div><b>3 · Juntar</b><span>A consoante dá a mão para a vogal: MA, PE, BO… e as primeiras palavras.</span></div></div>
+      <div class="step s-ler"><div class="n">📖</div><div><b>4 · Ler</b><span>Palavras maiores, frases e livrinhos para ler do começo ao fim.</span></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- COMO FUNCIONA -->
+<section class="band">
+  <div class="wrap">
+    <div class="center"><span class="eyebrow" style="color:var(--juntar)">Como funciona</span><h2 style="margin-top:8px">10 minutos por dia. Você só precisa seguir o roteiro.</h2>
+      <p class="lead" style="margin-top:14px">Uma lição por dia, de segunda a sexta, durante 8 semanas. Toda lição tem os mesmos 4 passos, para a criança saber o que vem e você não precisar preparar nada.</p></div>
+    <div class="routine">
+      <h3>A rotina de cada lição</h3>
+      <div class="bar" role="img" aria-label="Aquecer 2 minutos, Aprender 3 minutos, Praticar 4 minutos, Comemorar 1 minuto">
+        <div class="a">Aquecer<small>2 min</small></div><div class="b">Aprender<small>3 min</small></div><div class="c">Praticar<small>4 min</small></div><div class="d">🎉<small>1 min</small></div>
+      </div>
+      <div class="ticks"><span>0</span><span>2</span><span>5</span><span>9</span><span>10 min</span></div>
+      <p class="quote">Cada lição traz o que você vai falar, palavra por palavra, e o que fazer se ele travar. Sem precisar estudar nada antes.</p>
+    </div>
+    <div class="cta-row"><a class="btn" href="#oferta">QUERO O PLANO DE LEITURA</a></div>
+  </div>
+</section>
+
+<!-- PRÉVIA -->
+<section class="band" style="background:var(--paper-2)">
+  <div class="wrap">
+    <span class="eyebrow" style="color:var(--ler)">Sem enrolação</span>
+    <h2 style="margin-top:8px">Veja o material por dentro</h2>
+    <p class="hint">Arraste para o lado e toque para ampliar 👉</p>
+    <div class="gallery" id="gallery">
+      <button class="shot" type="button" data-src="img/licao1-roteiro.webp"><img src="img/licao1-roteiro.webp" alt="Roteiro da lição 1 para a mãe" width="803" height="1137"><span>O roteiro da mãe: o que falar e fazer</span></button>
+      <button class="shot" type="button" data-src="img/licao1-folha.webp"><img src="img/licao1-folha.webp" alt="Folha Detetive dos sons" width="803" height="1137"><span>Fase Ouvir: Detetive dos sons</span></button>
+      <button class="shot" type="button" data-src="img/licao21-trem.webp"><img src="img/licao21-trem.webp" alt="O trem do M" loading="lazy" width="803" height="1137"><span>Fase Juntar: o trem do M</span></button>
+      <button class="shot" type="button" data-src="img/licao21-palavras.webp"><img src="img/licao21-palavras.webp" alt="Primeiras palavras" loading="lazy" width="803" height="1137"><span>As primeiras palavras</span></button>
+      <button class="shot" type="button" data-src="img/livrinho-pato.webp"><img src="img/livrinho-pato.webp" alt="Livrinho O pato e a bola" loading="lazy" width="803" height="1137"><span>Livrinho para recortar e ler</span></button>
+      <button class="shot" type="button" data-src="img/teste.webp"><img src="img/teste.webp" alt="Teste de 5 minutos" loading="lazy" width="803" height="1137"><span>Teste de 5 minutos para começar certo</span></button>
+      <button class="shot" type="button" data-src="img/banco-labirinto.webp"><img src="img/banco-labirinto.webp" alt="Atividade do banco: caminho do A" loading="lazy" width="803" height="1137"><span>Banco: caminho da letra</span></button>
+      <button class="shot" type="button" data-src="img/banco-livrinho.webp"><img src="img/banco-livrinho.webp" alt="Livrinho do banco: A bola de Lalá" loading="lazy" width="803" height="1137"><span>Banco: mais 12 livrinhos</span></button>
+      <button class="shot" type="button" data-src="img/progresso.webp"><img src="img/progresso.webp" alt="Quadro de progresso" loading="lazy" width="803" height="1137"><span>Quadro de progresso</span></button>
+      <button class="shot" type="button" data-src="img/certificado.webp"><img src="img/certificado.webp" alt="Certificado Eu já leio" loading="lazy" width="803" height="1137"><span>Certificado “Eu já leio!”</span></button>
+    </div>
+  </div>
+</section>
+
+<!-- O QUE RECEBE -->
+<section class="band">
+  <div class="wrap">
+    <div class="center"><span class="eyebrow" style="color:var(--ouvir)">Tudo em PDF, acesso imediato</span><h2 style="margin-top:8px">O que você recebe</h2></div>
+    <div class="items">
+      <div class="item"><div class="ico">📘</div><h3>Plano de 40 lições</h3><p>129 páginas com o caminho pronto, do primeiro som até a primeira história. Você nunca fica sem saber o que fazer hoje.</p></div>
+      <div class="item"><div class="ico">🧪</div><h3>Teste de 5 minutos</h3><p>Descobre em qual fase seu filho está, para não perder tempo com o que ele já sabe.</p></div>
+      <div class="item"><div class="ico">🏡</div><h3>Quadro de progresso e certificado</h3><p>Ele vê o próprio avanço, casinha por casinha, e quer continuar.</p></div>
+      <div class="item"><div class="ico">✂️</div><h3>Cartões de letras e sílabas</h3><p>Para recortar e brincar de montar palavras e jogar bingo.</p></div>
+      <div class="item"><div class="ico">📚</div><h3>Banco com +440 atividades</h3><p>Para praticar mais nos fins de semana e nas férias, organizadas pelas mesmas 4 fases.</p><span class="tag">Só no Completo</span></div>
+      <div class="item"><div class="ico">📖</div><h3>16 livrinhos para ler</h3><p>Histórias curtas escritas só com as sílabas que ele já aprendeu. 4 no plano e mais 12 no Completo.</p><span class="tag">12 no Completo</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- PARA QUEM -->
+<section class="band" style="padding-top:0">
+  <div class="wrap">
+    <h2 class="center">É para você?</h2>
+    <div class="who">
+      <div class="yes"><h3>É para você se…</h3><ul>
+        <li>seu filho tem entre 4 e 7 anos e já conhece algumas letras;</li>
+        <li>você quer ajudar em casa, mas não sabe por onde começar;</li>
+        <li>você tem 10 minutos por dia e uma impressora (ou um tablet);</li>
+        <li>quer um momento juntos, longe das telas.</li></ul></div>
+      <div class="no"><h3>Não é para você se…</h3><ul>
+        <li>procura um app para a criança usar sozinha na tela;</li>
+        <li>procura um diagnóstico ou tratamento. O material não substitui a escola nem um especialista.</li></ul></div>
+    </div>
+  </div>
+</section>
+
+<!-- OFERTA -->
+<section class="band offer" id="oferta">
+  <div class="wrap">
+    <div class="center"><span class="eyebrow" style="color:var(--ler)">Pagamento único, sem mensalidade</span><h2 style="margin-top:8px">Escolha seu plano</h2></div>
+    <div class="plans">
+      <div class="plan">
+        <h3>Plano Básico</h3>
+        <div class="pimg"><img src="img/capa-plano.webp" alt="Capa do plano" loading="lazy" width="803" height="1137"></div>
+        <p class="count"><b>80</b> atividades</p>
+        <ul>
+          <li>Plano de 40 lições com roteiro</li>
+          <li>Teste inicial, quadro de progresso e certificado</li>
+          <li>Cartões de letras e sílabas</li>
+          <li>4 livrinhos para ler</li>
+          <li class="off">Banco com +440 atividades extras</li>
+          <li class="off">12 livrinhos extras</li>
+        </ul>
+        <div class="price"><span class="cur">R$</span><span class="val">19,90</span><span class="once">à vista</span></div>
+        <a class="btn alt block" data-plan="basico" href="#oferta">QUERO O BÁSICO</a>
+      </div>
+      <div class="plan best">
+        <span class="ribbon">⭐ Recomendado</span>
+        <h3>Plano Completo</h3>
+        <div class="pimg"><img src="img/capa-plano.webp" alt="Capa do plano" loading="lazy" width="803" height="1137"><img src="img/capa-banco.webp" alt="Capa do banco de atividades" loading="lazy" width="803" height="1137"></div>
+        <p class="count"><b>520</b> atividades</p>
+        <ul>
+          <li>Plano de 40 lições com roteiro</li>
+          <li>Teste inicial, quadro de progresso e certificado</li>
+          <li>Cartões de letras e sílabas</li>
+          <li>4 livrinhos para ler</li>
+          <li><b>Banco com +440 atividades extras</b></li>
+          <li><b>12 livrinhos extras</b></li>
+        </ul>
+        <div class="price"><span class="cur">R$</span><span class="val">27,90</span><span class="once">à vista</span></div>
+        <a class="btn block" data-plan="completo" href="#oferta">QUERO O COMPLETO</a>
+      </div>
+    </div>
+    <p class="compare">Por apenas R$ 8 a mais, você leva 6 vezes mais atividades. Menos de 6 centavos por atividade.</p>
+    <div class="trust" style="justify-content:center;margin-top:18px"><span>🔒 Compra segura</span><span>⚡ Acesso no e-mail logo após o pagamento</span><span>💳 Pix ou cartão</span></div>
+  </div>
+</section>
+
+<!-- GARANTIA -->
+<section class="band" style="padding-top:20px">
+  <div class="wrap">
+    <div class="guarantee">
+      <div class="seal"><div><b>7</b>dias de<br>garantia</div></div>
+      <div><h2 style="font-size:clamp(26px,5vw,34px);margin-bottom:10px">Teste por 7 dias, sem risco</h2>
+        <p>Baixe, imprima e faça as primeiras lições com seu filho. Se não for o que você esperava, peça o reembolso em até 7 dias e devolvemos 100% do valor. Sem perguntas e sem letra miúda.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="band" style="padding-top:20px">
+  <div class="wrap">
+    <h2 class="center">Perguntas frequentes</h2>
+    <div class="faq">
+      <details><summary>Para qual idade é?</summary><p>Para crianças de 4 a 7 anos, da pré-escola ao 1º ano. O teste inicial mostra por onde começar, então serve também para quem já lê um pouco.</p></details>
+      <details><summary>Preciso ser professora?</summary><p>Não. Cada lição traz o que falar e o que fazer se a criança travar.</p></details>
+      <details><summary>Como recebo o material?</summary><p>Logo após o pagamento, o acesso chega no seu e-mail. Os arquivos são PDF.</p></details>
+      <details><summary>Preciso imprimir tudo?</summary><p>Não. Imprima só a lição do dia, ou use no tablet. Pode imprimir quantas vezes quiser, inclusive para irmãos e primos.</p></details>
+      <details><summary>Quanto tempo por dia?</summary><p>10 minutos, de segunda a sexta. São 8 semanas, mas cada criança tem seu ritmo.</p></details>
+      <details><summary>Tem mensalidade?</summary><p>Não. O pagamento é único e o acesso é seu.</p></details>
+      <details><summary>E se eu não gostar?</summary><p>Você tem 7 dias de garantia: devolvemos 100% do valor.</p></details>
+      <details><summary>Funciona para criança com TEA, TDAH ou dislexia?</summary><p>O material é para famílias em geral e não é um tratamento. Se seu filho tem um diagnóstico, converse com a equipe que o acompanha.</p></details>
+    </div>
+  </div>
+</section>
+
+<!-- FINAL -->
+<section class="band final">
+  <div class="wrap center">
+    <span class="eyebrow" style="color:var(--mark)">Comece hoje</span>
+    <h2 style="margin-top:10px">Daqui a 8 semanas, você pode estar ouvindo seu filho ler a primeira historinha.</h2>
+    <p class="lead" style="margin-top:14px">10 minutos por dia, um roteiro pronto e muitas atividades para fazer juntos.</p>
+    <div class="sum"><span>40 lições com roteiro</span><span>até 520 atividades</span><span>a partir de R$ 19,90</span><span>7 dias de garantia</span></div>
+    <a class="btn" href="#oferta">QUERO O OUVIR PRA LER</a>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <p>Ouvir pra Ler · Material para a família aplicar em casa. Não substitui a escola nem acompanhamento profissional.</p>
+    <p>Os resultados variam de criança para criança.</p>
+    <p><a href="#">Termos de uso</a> · <a href="#">Política de privacidade</a> · <a href="#">Contato</a></p>
+    <p>Este site não faz parte do site do Facebook nem do Facebook Inc. e não é endossado pelo Facebook de nenhuma maneira.</p>
+  </div>
+</footer>
+
+<div class="sticky" id="sticky" aria-hidden="true">
+  <div class="t"><b>Ouvir pra Ler</b>a partir de R$ 19,90</div>
+  <a class="btn" href="#oferta" tabindex="-1">QUERO COMEÇAR</a>
+</div>
+
+<script>
+/* ===== Links da Cakto: cole aqui os links de checkout de cada plano ===== */
+var CHECKOUT = {
+  basico:   "",   // link do checkout do Plano Básico (R$ 19,90) na Cakto
+  completo: ""    // link do checkout do Plano Completo (R$ 27,90) na Cakto
+};
+document.querySelectorAll('[data-plan]').forEach(function(a){
+  var url = CHECKOUT[a.getAttribute('data-plan')];
+  if (!url) return;
+  try {   // repassa os UTMs do anúncio para o checkout da Cakto
+    var u = new URL(url);
+    new URLSearchParams(location.search).forEach(function(v,k){ u.searchParams.set(k,v); });
+    a.href = u.toString();
+  } catch(e) { a.href = url; }
+});
+
+/* Galeria: ampliar */
+document.getElementById('gallery').addEventListener('click', function(e){
+  var b = e.target.closest('.shot'); if(!b) return;
+  var box = document.createElement('div'); box.className='lightbox'; box.setAttribute('role','dialog'); box.setAttribute('aria-label','Página ampliada');
+  box.innerHTML = '<img alt="Página do material ampliada" src="'+b.getAttribute('data-src')+'"><button type="button" aria-label="Fechar">✕</button>';
+  function close(){ box.remove(); document.removeEventListener('keydown', esc); }
+  function esc(ev){ if(ev.key==='Escape') close(); }
+  box.addEventListener('click', function(ev){ if(ev.target===box || ev.target.tagName==='BUTTON') close(); });
+  document.addEventListener('keydown', esc);
+  document.body.appendChild(box); box.querySelector('button').focus();
+});
+
+/* Barra fixa no celular: aparece depois do topo e some na seção de oferta */
+(function(){
+  var s=document.getElementById('sticky'), hero=document.querySelector('.hero'), offer=document.getElementById('oferta');
+  if(!('IntersectionObserver' in window)) return;
+  var heroOut=false, offerIn=false;
+  function upd(){ s.classList.toggle('on', heroOut && !offerIn); }
+  new IntersectionObserver(function(es){ heroOut=!es[0].isIntersecting; upd(); }).observe(hero);
+  new IntersectionObserver(function(es){ offerIn=es[0].isIntersecting; upd(); }).observe(offer);
+})();
+</script>
+
+</body>
+</html>
