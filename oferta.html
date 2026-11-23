@@ -1,0 +1,140 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>📖</text></svg>">
+<!-- Meta Pixel: cole aqui o mesmo código do Pixel da página de vendas -->
+<title>Ouvir pra Ler — complete o seu plano</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&family=Nunito:wght@400;600;700;800&display=swap">
+<style>
+:root{
+  --paper:#fffcf7; --ink:#262840; --ink-2:#55597a; --line:#ece4d6;
+  --ouvir:#ff7a2f; --ligar:#2f7bff; --juntar:#16a866; --ler:#7c4dff; --ler-l:#ece5ff;
+  --mark:#ffd84d; --cta:#16a866; --cta-d:#0f8a52;
+  --display:"Fredoka","Trebuchet MS",system-ui,sans-serif;
+  --body:"Nunito","Segoe UI",system-ui,sans-serif;
+  color-scheme:light;
+}
+*{box-sizing:border-box}
+body{background:var(--paper);color:var(--ink);font-family:var(--body);font-size:17px;line-height:1.6;margin:0}
+img{max-width:100%;height:auto;display:block}
+h1,h2{font-family:var(--display);line-height:1.12;margin:0;text-wrap:balance}
+p{margin:0}
+.wrap{max-width:720px;margin:0 auto;padding:0 18px}
+.mark{background:linear-gradient(transparent 58%,var(--mark) 58%,var(--mark) 92%,transparent 92%)}
+
+.ok{background:var(--juntar);color:#fff;text-align:center;font-weight:700;padding:12px 18px;font-size:15px}
+.ok b{font-family:var(--display);font-weight:600}
+.steps{display:flex;justify-content:center;gap:6px;margin:22px 0 0;font-size:12px;white-space:nowrap;font-weight:700;color:var(--ink-2)}
+.steps span{padding:6px 10px;border-radius:999px;background:#fff;border:1px solid var(--line)}
+.steps .on{background:var(--ink);color:#fff;border-color:var(--ink)}
+
+.hero{padding:26px 0 10px;text-align:center}
+.eyebrow{font-family:var(--display);font-weight:600;font-size:14px;letter-spacing:.08em;text-transform:uppercase;color:var(--ler)}
+h1{font-size:clamp(30px,7vw,46px);margin-top:10px}
+.lead{color:var(--ink-2);font-size:clamp(17px,2.6vw,19px);margin:14px auto 0;max-width:56ch}
+.mock{width:min(300px,72%);margin:22px auto 0;filter:drop-shadow(0 18px 24px rgba(38,40,64,.18))}
+
+.card{background:#fff;border:1px solid var(--line);border-radius:20px;padding:24px 20px;margin-top:26px;box-shadow:0 10px 30px -14px rgba(38,40,64,.22)}
+.card h2{font-size:24px;text-align:center}
+.phases{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;margin-top:18px}
+.ph{border-radius:14px;padding:12px 14px;color:#fff}
+.ph b{font-family:var(--display);font-size:26px;display:block;line-height:1}
+.ph span{font-size:14px;font-weight:700;opacity:.95}
+.ph small{display:block;font-size:13px;opacity:.9;margin-top:2px}
+.list{margin:18px 0 0;padding:0;list-style:none}
+.list li{padding-left:30px;position:relative;margin-top:9px}
+.list li::before{content:"✓";position:absolute;left:0;top:0;width:22px;height:22px;border-radius:50%;background:var(--juntar);color:#fff;font-size:13px;font-weight:800;display:grid;place-items:center;margin-top:2px}
+
+.shots{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:22px}
+.shots img{border-radius:12px;border:1px solid var(--line)}
+.cap{font-size:13px;color:var(--ink-2);text-align:center;margin-top:8px}
+
+.price{text-align:center;margin-top:30px}
+.price .was{font-size:15px;color:var(--ink-2)}
+.price .now{font-family:var(--display);font-weight:700;font-size:54px;color:var(--juntar);line-height:1;margin-top:6px}
+.price .note{font-size:14px;color:var(--ink-2);margin-top:6px}
+
+.buy{margin:20px auto 0;max-width:520px;text-align:center}
+cakto-upsell-accept::part(button){background:var(--cta);color:#fff;font-family:var(--display);font-weight:700;font-size:20px;border:0;border-radius:999px;padding:18px 26px;width:100%;box-shadow:0 6px 0 var(--cta-d);cursor:pointer}
+cakto-upsell-reject::part(button){background:none;color:var(--ink-2);font-family:var(--body);font-size:15px;text-decoration:underline;border:0;margin-top:14px;cursor:pointer}
+
+.safe{display:flex;gap:14px;align-items:center;background:#fff;border:1px dashed var(--line);border-radius:16px;padding:16px;margin-top:26px;font-size:15px;color:var(--ink-2)}
+.safe .i{font-size:34px}
+.safe b{color:var(--ink)}
+footer{text-align:center;font-size:13px;color:var(--ink-2);padding:34px 18px 40px}
+</style>
+</head>
+<body>
+
+<div class="ok">✅ <b>Pedido confirmado!</b> O acesso ao Ouvir pra Ler já foi enviado para o seu e-mail.</div>
+
+<main class="wrap">
+  <div class="steps"><span>1. Compra feita</span><span class="on">2. Complete o plano</span><span>3. Acesso</span></div>
+
+  <section class="hero">
+    <div class="eyebrow">Antes de acessar · só para quem acabou de comprar</div>
+    <h1>Quer <span class="mark">+440 atividades</span> para praticar cada fase?</h1>
+    <p class="lead">O plano traz as 40 lições. O <b>Banco de Atividades</b> é para os dias em que a criança quer mais: fins de semana, férias, ou quando uma fase precisa de reforço.</p>
+    <img class="mock" src="img/mockup-banco.webp" alt="Livro Banco de Atividades do Ouvir pra Ler" width="672" height="1000">
+  </section>
+
+  <section class="card">
+    <h2>O que você recebe</h2>
+    <div class="phases">
+      <div class="ph" style="background:var(--ouvir)"><b>80</b><span>Fase 1 · Ouvir</span><small>rimas, palmas, primeiro som</small></div>
+      <div class="ph" style="background:var(--ligar)"><b>120</b><span>Fase 2 · Ligar</span><small>cada som com sua letra</small></div>
+      <div class="ph" style="background:var(--juntar)"><b>140</b><span>Fase 3 · Juntar</span><small>sílabas e primeiras palavras</small></div>
+      <div class="ph" style="background:var(--ler)"><b>100</b><span>Fase 4 · Ler</span><small>palavras, frases e livrinhos</small></div>
+    </div>
+    <ul class="list">
+      <li>Organizado pelas <b>mesmas 4 fases</b> do plano: você sabe exatamente qual folha usar depois de cada lição.</li>
+      <li>Só usa as letras que a criança já aprendeu. Nada de folha difícil demais.</li>
+      <li>PDF para imprimir: imprima só o que for usar e repita quantas vezes quiser.</li>
+      <li>Junto com o plano, são mais de 500 atividades no total.</li>
+    </ul>
+    <div class="shots">
+      <div><img src="img/banco-labirinto.webp" alt="Página do banco: labirinto das sílabas" loading="lazy"><p class="cap">Labirinto das sílabas</p></div>
+      <div><img src="img/banco-livrinho.webp" alt="Página do banco: livrinho para ler" loading="lazy"><p class="cap">Livrinho para ler sozinho</p></div>
+    </div>
+  </section>
+
+  <section class="price">
+    <p class="was">É o mesmo conteúdo que vem no Plano Completo.</p>
+    <p class="now">R$ 7,90</p>
+    <p class="note">pagamento único · 1 clique, sem digitar o cartão de novo</p>
+  </section>
+
+  <div class="buy">
+    <!-- Botões gerados na Cakto (Gerador de Upsell) -->
+    <cakto-upsell-buttons>
+      <cakto-upsell-accept
+        bg-color="#16a866"
+        text-color="#ffffff"
+        upsell-accept-url="members_area"
+        offer-id="bsnuv8a"
+        app-base-url="https://app.cakto.com.br"
+        offer-type="upsell"
+        upsell-reject-url="members_area"
+      >
+        Sim, quero o Banco de Atividades por R$ 7,90
+      </cakto-upsell-accept>
+      <cakto-upsell-reject
+        upsell-reject-url="members_area"
+      >
+        Não, obrigada. Quero ficar só com o plano
+      </cakto-upsell-reject>
+    </cakto-upsell-buttons>
+    <script type="text/javascript" src="https://caktoscripts.nyc3.cdn.digitaloceanspaces.com/upsell.js"></script>
+  </div>
+
+  <div class="safe"><span class="i">🛡️</span><p><b>7 dias de garantia.</b> Se não fizer sentido para vocês, é só pedir o reembolso dentro do prazo.</p></div>
+</main>
+
+<footer>Ouvir pra Ler · Este valor de upgrade aparece só nesta página, logo depois da compra.</footer>
+</body>
+</html>
